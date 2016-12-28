@@ -1,7 +1,7 @@
 package com.xcafe.spring.test;
 
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.FileSystemXmlApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class App {
 
@@ -12,10 +12,10 @@ public class App {
         // person.sayHello();
 
         //running program with Spring
-        ApplicationContext appCtx = new FileSystemXmlApplicationContext("beans.xml");
+        ApplicationContext appCtx = new ClassPathXmlApplicationContext("beans.xml");
         Person person = (Person) appCtx.getBean("person");
         person.sayHello();
 
-        ((FileSystemXmlApplicationContext) appCtx).close();
+        ((ClassPathXmlApplicationContext) appCtx).close();
     }
 }
