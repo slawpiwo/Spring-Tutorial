@@ -7,6 +7,7 @@ public class Person {
     private int id;
     private String name;
     private int age;
+    private Address address;
 
     public Person(int id, String name) {
         this.id = id;
@@ -17,9 +18,14 @@ public class Person {
         this.age = age;
     }
 
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
     public void sayHello() {
         System.out.println("Hello, I am " + name);
     }
+
 
     @Override
     public String toString() {
@@ -27,6 +33,7 @@ public class Person {
                 .append("id", id)
                 .append("name", name)
                 .append("age", age)
+                .append("address", address)
                 .toString();
     }
 }

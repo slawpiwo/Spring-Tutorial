@@ -9,6 +9,13 @@
         <constructor-arg value="Richard" index="1" name="name" type="java.lang.String"></constructor-arg>
 
         <property name="age" value="21"></property>
+        <property name="address" ref="address"></property>
+    </bean>
+
+    <bean id="address" class="com.xcafe.spring.test.Address">
+        <constructor-arg name="street" value="Random"></constructor-arg>
+        <constructor-arg name="houseNumber" value="33"></constructor-arg>
+        <constructor-arg name="postcode"  value="60-221"></constructor-arg>
     </bean>
 
 </beans>
