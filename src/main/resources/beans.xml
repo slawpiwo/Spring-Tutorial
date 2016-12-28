@@ -3,8 +3,8 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-
-    <bean id="person" class="com.xcafe.spring.test.Person">
+    <!-- by default each bean is a singleton -->
+    <bean id="person" class="com.xcafe.spring.test.Person" scope="singleton">
         <constructor-arg value="10" index="0" name="id" type="int"></constructor-arg>
         <constructor-arg value="Richard" index="1" name="name" type="java.lang.String"></constructor-arg>
 
@@ -12,7 +12,7 @@
         <property name="address" ref="address"></property>
     </bean>
 
-    <bean id="address" class="com.xcafe.spring.test.Address">
+    <bean id="address" class="com.xcafe.spring.test.Address" scope="prototype">
         <constructor-arg name="street" value="Random"></constructor-arg>
         <constructor-arg name="houseNumber" value="33"></constructor-arg>
         <constructor-arg name="postcode"  value="60-221"></constructor-arg>

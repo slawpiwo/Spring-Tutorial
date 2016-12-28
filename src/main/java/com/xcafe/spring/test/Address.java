@@ -15,6 +15,9 @@ public class Address {
         this.postcode = postcode;
     }
 
+    public void setHouseNumber(int houseNumber) {
+        this.houseNumber = houseNumber;
+    }
 
     @Override
     public String toString() {
