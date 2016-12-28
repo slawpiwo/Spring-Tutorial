@@ -5,6 +5,8 @@
 
 
     <bean id="person" class="com.xcafe.spring.test.Person">
+        <constructor-arg value="10" index="0" name="id" type="int"></constructor-arg>
+        <constructor-arg value="Richard" index="1" name="name" type="java.lang.String"></constructor-arg>
     </bean>
 
 </beans>

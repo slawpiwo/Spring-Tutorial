@@ -14,7 +14,9 @@ public class App {
         //running program with Spring
         ApplicationContext appCtx = new ClassPathXmlApplicationContext("beans.xml");
         Person person = (Person) appCtx.getBean("person");
+        System.out.println("Person: " + person + " is saying: ");
         person.sayHello();
+
 
         ((ClassPathXmlApplicationContext) appCtx).close();
     }
