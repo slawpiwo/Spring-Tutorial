@@ -14,6 +14,16 @@ public class Person {
         this.name = name;
     }
 
+    // static factory method
+    public static Person getInstance(int id, String name) {
+        if (id > 0) {
+            System.out.println("Creating Person using factory method.");
+            return new Person(id, name);
+        } else {
+            throw new IllegalArgumentException("Incorrect id of person.");
+        }
+    }
+
     /*
      * When you use setter-based dependency injection, the init-method makes it possible to perform initialization:
      * the specified method will be called after all the setters have been called.

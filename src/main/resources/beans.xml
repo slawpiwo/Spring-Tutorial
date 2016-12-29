@@ -6,13 +6,28 @@
        default-destroy-method="destroy">
 
     <!-- by default each bean is a singleton -->
-    <bean id="person" class="com.xcafe.spring.test.Person" init-method="onInit" destroy-method="onDestroy">
+    <bean id="person" class="com.xcafe.spring.test.Person" init-method="onInit" destroy-method="onDestroy"
+          factory-method="getInstance">
+
         <constructor-arg value="10" index="0" name="id" type="int"></constructor-arg>
         <constructor-arg value="Richard" index="1" name="name" type="java.lang.String"></constructor-arg>
 
         <property name="age" value="21"></property>
         <property name="address" ref="address"></property>
     </bean>
+
+    <bean id="person2" class="com.xcafe.spring.test.Person" init-method="onInit" destroy-method="onDestroy"
+          factory-bean="personFactory" factory-method="createPerson">
+
+        <constructor-arg value="11" index="0" name="id" type="int"></constructor-arg>
+        <constructor-arg value="Stephen" index="1" name="name" type="java.lang.String"></constructor-arg>
+
+        <property name="age" value="55"></property>
+        <property name="address" ref="address"></property>
+    </bean>
+
+    <bean id="personFactory" class="com.xcafe.spring.test.PersonFactory"></bean>
+
 
     <bean id="address" class="com.xcafe.spring.test.Address" scope="prototype">
         <constructor-arg name="street" value="Random"></constructor-arg>
