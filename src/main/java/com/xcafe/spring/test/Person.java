@@ -14,6 +14,26 @@ public class Person {
         this.name = name;
     }
 
+    /*
+     * When you use setter-based dependency injection, the init-method makes it possible to perform initialization:
+     * the specified method will be called after all the setters have been called.
+     */
+    public void onInit() {
+        // check required dependencies
+        if (address == null) {
+            throw new IllegalStateException("Address must be set in order for service to work");
+        }
+        System.out.println("Person object has been initialized: " + this);
+    }
+
+    /*
+     * The destroy-method: onDestroy is only called if and only if the bean is a singleton instance
+     */
+    public void onDestroy() {
+        // do some destruction work (like releasing pooled connections)
+        System.out.println("Person object has been destroyed.");
+    }
+
     public void setAge(int age) {
         this.age = age;
     }
@@ -25,7 +45,6 @@ public class Person {
     public void sayHello() {
         System.out.println("Hello, I am " + name);
     }
-
 
     @Override
     public String toString() {
