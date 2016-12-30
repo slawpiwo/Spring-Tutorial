@@ -17,14 +17,14 @@
         </constructor-arg>
 
         <constructor-arg>
-            <list>
-                <ref bean="organizer_monday"/>
-                <ref bean="organizer_tuesday"/>
-            </list>
+            <map>
+                <entry key="Monday" value-ref="organizerMonday"></entry>
+                <entry key="Tuesday" value-ref="organizerTuesday"></entry>
+            </map>
         </constructor-arg>
     </bean>
 
-    <bean id="organizer_monday" class="com.xcafe.spring.test.Organizer">
+    <bean id="organizerMonday" class="com.xcafe.spring.test.Organizer">
         <constructor-arg name="name" value="Monday"></constructor-arg>
         <constructor-arg name="tasks">
             <list>
@@ -42,7 +42,7 @@
         </property>
     </bean>
 
-    <bean id="organizer_tuesday" class="com.xcafe.spring.test.Organizer">
+    <bean id="organizerTuesday" class="com.xcafe.spring.test.Organizer">
         <constructor-arg name="name" value="Tuesday"></constructor-arg>
         <constructor-arg name="tasks">
             <list>
