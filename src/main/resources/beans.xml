@@ -7,7 +7,18 @@
        default-init-method="init"
        default-destroy-method="destroy">
 
-    <!-- by default each bean is a singleton -->
+    <bean id="organizer" class="com.xcafe.spring.test.Organizer">
+        <constructor-arg name="name" value="My today's tasks"></constructor-arg>
+        <constructor-arg name="tasks">
+            <list>
+                <value>Shopping</value>
+                <value>Dance classes</value>
+                <value>Meeting with Mark</value>
+                <value>Meeting with Mark</value>
+            </list>
+        </constructor-arg>
+    </bean>
+
     <bean id="person" class="com.xcafe.spring.test.Person"
           c:_0="1" c:_1="Richard" p:age="21" p:address-ref="address"
           init-method="onInit" destroy-method="onDestroy"

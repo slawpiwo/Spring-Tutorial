@@ -13,6 +13,9 @@ public class App {
         person.setAge(99);
         System.out.println("Person: " + person);
 
+        Organizer organizer = (Organizer) appCtx.getBean("organizer");
+        System.out.println("Organizer ::: " + organizer);
+
         ((ClassPathXmlApplicationContext) appCtx).close();
     }
 }
