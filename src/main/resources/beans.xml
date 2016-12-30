@@ -8,6 +8,14 @@
        default-destroy-method="destroy">
 
     <bean id="week" class="com.xcafe.spring.test.WeekOrganizer">
+        <constructor-arg name="person">
+            <bean class="com.xcafe.spring.test.Person"
+                  c:name="Sam" c:id="2" p:age="55" p:address-ref="address"
+                  init-method="onInit" destroy-method="onDestroy"
+                  factory-bean="personFactory" factory-method="createPerson">
+            </bean>
+        </constructor-arg>
+
         <constructor-arg>
             <list>
                 <ref bean="organizer_monday"/>
@@ -41,12 +49,6 @@
           c:_0="1" c:_1="Richard" p:age="21" p:address-ref="address"
           init-method="onInit" destroy-method="onDestroy"
           factory-method="getInstance">
-    </bean>
-
-    <bean id="person2" class="com.xcafe.spring.test.Person"
-          c:name="Sam" c:id="2" p:age="55" p:address-ref="address"
-          init-method="onInit" destroy-method="onDestroy"
-          factory-bean="personFactory" factory-method="createPerson">
     </bean>
 
 
