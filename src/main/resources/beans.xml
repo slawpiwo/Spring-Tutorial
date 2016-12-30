@@ -33,6 +33,13 @@
                 <value>Meeting with Mark</value>
             </list>
         </constructor-arg>
+
+        <property name="notes">
+            <props>
+                <prop key="shopping">Can food for kitten</prop>
+                <prop key="classes">Starting 15 minutes later</prop>
+            </props>
+        </property>
     </bean>
 
     <bean id="organizer_tuesday" class="com.xcafe.spring.test.Organizer">
