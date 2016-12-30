@@ -7,6 +7,20 @@
        default-init-method="init"
        default-destroy-method="destroy">
 
+
+    <bean id="consoleWriter" class="com.xcafe.spring.test.logger.ConsoleWriter">
+
+    </bean>
+
+    <bean id="fileWriter" class="com.xcafe.spring.test.logger.FileWriter">
+
+    </bean>
+
+    <bean id="logger" class="com.xcafe.spring.test.logger.Logger" autowire="byType">
+
+    </bean>
+
+
     <bean id="week" class="com.xcafe.spring.test.WeekOrganizer">
         <constructor-arg name="person">
             <bean class="com.xcafe.spring.test.Person"

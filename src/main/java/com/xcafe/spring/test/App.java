@@ -1,5 +1,6 @@
 package com.xcafe.spring.test;
 
+import com.xcafe.spring.test.logger.Logger;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -9,12 +10,14 @@ public class App {
 
         ApplicationContext appCtx = new ClassPathXmlApplicationContext("beans.xml");
 
+        Logger logger = (Logger) appCtx.getBean("logger");
+
         Person person = (Person) appCtx.getBean("person");
         person.setAge(99);
-        System.out.println("Person: " + person);
+        logger.writeConsole("Person: " + person);
 
         WeekOrganizer weekOrganizer = (WeekOrganizer) appCtx.getBean("week");
-        System.out.println("Weekly Organizer ::: " + weekOrganizer);
+        logger.writeFile("Weekly Organizer ::: " + weekOrganizer);
 
         ((ClassPathXmlApplicationContext) appCtx).close();
     }
