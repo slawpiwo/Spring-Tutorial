@@ -7,14 +7,32 @@
        default-init-method="init"
        default-destroy-method="destroy">
 
-    <bean id="organizer" class="com.xcafe.spring.test.Organizer">
-        <constructor-arg name="name" value="My today's tasks"></constructor-arg>
+    <bean id="week" class="com.xcafe.spring.test.WeekOrganizer">
+        <constructor-arg>
+            <list>
+                <ref bean="organizer_monday"/>
+                <ref bean="organizer_tuesday"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="organizer_monday" class="com.xcafe.spring.test.Organizer">
+        <constructor-arg name="name" value="Monday"></constructor-arg>
         <constructor-arg name="tasks">
             <list>
                 <value>Shopping</value>
                 <value>Dance classes</value>
                 <value>Meeting with Mark</value>
-                <value>Meeting with Mark</value>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="organizer_tuesday" class="com.xcafe.spring.test.Organizer">
+        <constructor-arg name="name" value="Tuesday"></constructor-arg>
+        <constructor-arg name="tasks">
+            <list>
+                <value>Pick up Rob from the airport</value>
+                <value>An appointment at the dentist's</value>
             </list>
         </constructor-arg>
     </bean>
