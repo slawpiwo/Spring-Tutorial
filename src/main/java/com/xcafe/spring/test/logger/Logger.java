@@ -8,11 +8,15 @@ public class Logger {
     private FileWriter fileWriter;
 
     @Autowired
+    public Logger(ConsoleWriter consoleWriter, FileWriter fileWriter) {
+        this.consoleWriter = consoleWriter;
+        this.fileWriter = fileWriter;
+    }
+
     public void setConsoleWriter(ConsoleWriter consoleWriter) {
         this.consoleWriter = consoleWriter;
     }
 
-    @Autowired
     public void setFileWriter(FileWriter fileWriter) {
         this.fileWriter = fileWriter;
     }
