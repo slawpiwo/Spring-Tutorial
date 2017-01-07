@@ -13,7 +13,14 @@
     <context:annotation-config></context:annotation-config>
 
 
-    <bean id="fileWriter" class="com.xcafe.spring.test.logger.FileWriter">
+    <bean id="consoleWriter1" class="com.xcafe.spring.test.logger.ConsoleWriter">
+    </bean>
+
+    <bean id="consoleWriter2" class="com.xcafe.spring.test.logger.ConsoleWriter">
+        <qualifier value="smallconsole"></qualifier>
+    </bean>
+
+    <bean id="fileWriterNew" class="com.xcafe.spring.test.logger.FileWriter">
     </bean>
 
     <bean id="logger" class="com.xcafe.spring.test.logger.Logger">
