@@ -1,6 +1,8 @@
 package com.xcafe.spring.test.logger;
 
 import javax.annotation.Resource;
+import javax.inject.Inject;
+import javax.inject.Named;
 
 public class Logger {
 
@@ -8,12 +10,14 @@ public class Logger {
     private LogWriter fileWriter;
 
 
-    @Resource(name = "consoleWriter2")
+    @Inject
+    @Named(value = "consoleWriter2")
     public void setConsoleWriter(ConsoleWriter consoleWriter) {
         this.consoleWriter = consoleWriter;
     }
 
-    @Resource(name = "fileWriterNew")
+    @Inject
+    @Named(value = "fileWriterNew")
     public void setFileWriter(LogWriter fileWriter) {
         this.fileWriter = fileWriter;
     }
