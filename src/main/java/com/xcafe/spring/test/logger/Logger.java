@@ -1,8 +1,12 @@
 package com.xcafe.spring.test.logger;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class Logger {
 
+    @Autowired
     private ConsoleWriter consoleWriter;
+    @Autowired
     private FileWriter fileWriter;
 
     public void setConsoleWriter(ConsoleWriter consoleWriter) {
