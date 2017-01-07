@@ -2,14 +2,12 @@ package com.xcafe.spring.test.logger;
 
 public class Logger {
 
-    private LogWriter consoleWriter;
-    private LogWriter fileWriter;
+    private ConsoleWriter consoleWriter;
+    private FileWriter fileWriter;
 
-    public void setConsoleWriter(LogWriter consoleWriter) {
+
+    public Logger(ConsoleWriter consoleWriter, FileWriter fileWriter) {
         this.consoleWriter = consoleWriter;
-    }
-
-    public void setFileWriter(LogWriter fileWriter) {
         this.fileWriter = fileWriter;
     }
 
