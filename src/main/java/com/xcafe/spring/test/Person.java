@@ -2,6 +2,9 @@ package com.xcafe.spring.test;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 public class Person {
 
     private int id;
@@ -28,6 +31,7 @@ public class Person {
      * When you use setter-based dependency injection, the init-method makes it possible to perform initialization:
      * the specified method will be called after all the setters have been called.
      */
+    @PostConstruct
     public void onInit() {
         // check required dependencies
         if (address == null) {
@@ -39,6 +43,7 @@ public class Person {
     /*
      * The destroy-method: onDestroy is only called if and only if the bean is a singleton instance
      */
+    @PreDestroy
     public void onDestroy() {
         // do some destruction work (like releasing pooled connections)
         System.out.println("Person object has been destroyed.");

@@ -4,6 +4,9 @@ package com.xcafe.spring.test;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.springframework.beans.factory.annotation.Required;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 public class Address {
 
     private String street;
@@ -21,6 +24,7 @@ public class Address {
         this.houseNumber = houseNumber;
     }
 
+    @PostConstruct
     public void init() {
         System.out.println("Address object has been initialized: " + this);
     }
@@ -28,6 +32,7 @@ public class Address {
     /*
      * The destroy-method: onDestroy is only called if and only if the bean is a singleton instance
      */
+    @PreDestroy
     public void destroy() {
         // do some destruction work (like releasing pooled connections)
         System.out.println("Address object has been destroyed.");

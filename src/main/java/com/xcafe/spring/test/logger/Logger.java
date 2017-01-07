@@ -1,7 +1,6 @@
 package com.xcafe.spring.test.logger;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import javax.annotation.Resource;
 
 public class Logger {
 
@@ -9,14 +8,12 @@ public class Logger {
     private LogWriter fileWriter;
 
 
-    @Autowired
-    @Qualifier("smallconsole")
+    @Resource(name = "consoleWriter2")
     public void setConsoleWriter(ConsoleWriter consoleWriter) {
         this.consoleWriter = consoleWriter;
     }
 
-    @Autowired
-    @Qualifier("filewriter")
+    @Resource(name = "fileWriterNew")
     public void setFileWriter(LogWriter fileWriter) {
         this.fileWriter = fileWriter;
     }
