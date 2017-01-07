@@ -13,9 +13,6 @@
     <context:annotation-config></context:annotation-config>
 
 
-    <bean id="consoleWriter" class="com.xcafe.spring.test.logger.ConsoleWriter">
-    </bean>
-
     <bean id="fileWriter" class="com.xcafe.spring.test.logger.FileWriter">
     </bean>
 
