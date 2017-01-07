@@ -5,7 +5,9 @@
        xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
        default-init-method="init"
-       default-destroy-method="destroy">
+       default-destroy-method="destroy"
+       default-autowire="byType"
+       default-autowire-candidates="*Writer"> <!-- or a list of beans: "fileWriter,consoleWriter" -->
 
 
     <bean id="consoleWriter" class="com.xcafe.spring.test.logger.ConsoleWriter">
@@ -16,7 +18,11 @@
 
     </bean>
 
-    <bean id="logger" class="com.xcafe.spring.test.logger.Logger" autowire="constructor">
+    <bean id="specialLogger" class="com.xcafe.spring.test.logger.FileWriter">
+
+    </bean>
+
+    <bean id="logger" class="com.xcafe.spring.test.logger.Logger">
 
     </bean>
 

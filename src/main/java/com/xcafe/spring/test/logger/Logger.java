@@ -5,9 +5,11 @@ public class Logger {
     private ConsoleWriter consoleWriter;
     private FileWriter fileWriter;
 
-
-    public Logger(ConsoleWriter consoleWriter, FileWriter fileWriter) {
+    public void setConsoleWriter(ConsoleWriter consoleWriter) {
         this.consoleWriter = consoleWriter;
+    }
+
+    public void setFileWriter(FileWriter fileWriter) {
         this.fileWriter = fileWriter;
     }
 
