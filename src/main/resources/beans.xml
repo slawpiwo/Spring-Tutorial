@@ -16,7 +16,7 @@
 
     </bean>
 
-    <bean id="logger" class="com.xcafe.spring.test.logger.Logger" autowire="byType">
+    <bean id="logger" class="com.xcafe.spring.test.logger.Logger" autowire="byName">
 
     </bean>
 
