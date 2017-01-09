@@ -1,9 +1,11 @@
 package com.xcafe.spring.test.logger;
 
-import javax.annotation.Resource;
+import org.springframework.stereotype.Component;
+
 import javax.inject.Inject;
 import javax.inject.Named;
 
+@Component
 public class Logger {
 
     private ConsoleWriter consoleWriter;
@@ -11,7 +13,6 @@ public class Logger {
 
 
     @Inject
-    @Named(value = "consoleWriter2")
     public void setConsoleWriter(ConsoleWriter consoleWriter) {
         this.consoleWriter = consoleWriter;
     }
