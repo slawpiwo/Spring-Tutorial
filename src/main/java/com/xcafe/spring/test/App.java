@@ -19,6 +19,8 @@ public class App {
         WeekOrganizer weekOrganizer = (WeekOrganizer) appCtx.getBean("week");
         logger.writeFile("Weekly Organizer ::: " + weekOrganizer);
 
+        logger.writeToRemoteFile("");
+
         ((ClassPathXmlApplicationContext) appCtx).close();
     }
 }

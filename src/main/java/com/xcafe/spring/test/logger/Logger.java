@@ -10,6 +10,7 @@ public class Logger {
 
     private ConsoleWriter consoleWriter;
     private LogWriter fileWriter;
+    private LogWriter remoteWriter;
 
 
     @Inject
@@ -23,6 +24,11 @@ public class Logger {
         this.fileWriter = fileWriter;
     }
 
+    @Inject
+    public void setRemoteWriter(LogWriter remoteWriter) {
+        this.remoteWriter = remoteWriter;
+    }
+
     public void writeFile(String text) {
         fileWriter.write(text);
     }
@@ -31,5 +37,9 @@ public class Logger {
         if (consoleWriter != null) {
             consoleWriter.write(text);
         }
+    }
+
+    public void writeToRemoteFile(String text) {
+        remoteWriter.write(text);
     }
 }
